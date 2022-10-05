@@ -38,11 +38,11 @@ DOCTYPE html>
             let throughresort=document.getElementById("Resort").checked
     if(throughair)
     {
-        my_vacation.Travel by Air=true;
+        my_vacation.TravelbyAir=true;
     }
     else
     {
-        my_vacation.Travel by Air=false;
+        my_vacation.TravelbyAirr=false;
     }
     if(throughDomestic)
     {
@@ -65,3 +65,28 @@ DOCTYPE html>
     document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
 }
     </script>
+
+<form>
+    <label for="city">Enter a city</label>
+    <input type="text" id="city" name="propertyname" value="city"> <br>
+    
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="vacationprice"> <br>
+
+    <input type="button" class="btn btn-success" value="Update the vacation" onclick="updateVacation()">
+    <p id="result">Need to select vacation and update vacation details</p>
+</form> 
+<script>
+function updateVacation()
+{
+let city=document.getElementById("city").value;
+let price=document.getElementById("price").value;
+my_vacation["city"]=city;
+my_vacation["price"]=price;
+
+document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
+}
+
+</script>
+</body>
+</html>
