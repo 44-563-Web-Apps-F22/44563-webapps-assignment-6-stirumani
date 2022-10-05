@@ -1,0 +1,67 @@
+DOCTYPE html>
+<html>
+ <head>
+    <title>Vacation time for Nikitha</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+ </head>
+<body>
+
+<h2>Tirumani Shivani Goud selects a vacation</h2>
+<div class="container">
+    <form>
+       <div class="form-group">
+        <input type="checkbox" id="byair" name="vacationtime" value="true">
+        <label for="air">Travel by Air</label></div> <br>
+        <div class="form-group">
+        <input type="checkbox" id="bydomestic" name="vacationtime" value="true">
+        <label for="domestic">Domestic</label> </div><br>
+        <div class="form-group">
+        <input type="checkbox" id="byresort" name="vacationtime" value="false">
+        <label for="resort">Resort</label> </div><br>
+        <div class="form-group">
+        <input type="button" class="btn btn-warning" value="Select a vacation" onclick="selectVacation()">
+    </div>
+    </form>
+    <br>
+    
+    <script>
+        var my_vacation={};
+        function selectVacation(){
+            my_vacation={};
+            let throughair=document.getElementById("Travel by Air").checked
+            let throughdomestic=document.getElementById("Domestic").checked
+            let throughresort=document.getElementById("Resort").checked
+    if(throughair)
+    {
+        my_vacation.Travel by Air=true;
+    }
+    else
+    {
+        my_vacation.Travel by Air=false;
+    }
+    if(throughDomestic)
+    {
+        my_vacation.Domestic=true;
+    }
+    else
+    {
+        my_vacation.Domestic=false;
+    }
+    if(throughresort)
+    {
+        my_vacation.Resort=true;
+    }
+    else
+    {
+        my_vacation.Resort=false;
+    }
+    
+
+    document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
+}
+    </script>
