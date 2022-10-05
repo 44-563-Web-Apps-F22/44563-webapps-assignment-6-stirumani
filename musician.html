@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><h1>Musician Band </h1></head>
+        <head><h1>Musician Band </h1></head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +39,45 @@
         }
     }
     </script>
-     
-</body>
-</html>
+     <div class="container">
+        <img src="Image1.png" class="img-fluid" onclick="swapImage()" id="Image" width="100px" height="100px " alt="insect" >
+        <p id="result">This image will be replaced</p>
+        </div>
+        <script>
+            var useImage= 1
+            function swapImage(){
+                switch(useImage){
+                    case 1: 
+                    document.getElementById("Image").src="Image1.png";
+                    useImage =  2;
+                    break;
+                    case 2:
+                    document.getElementById("Image").src="Image2.png";
+                    useImage=3;
+                    break;
+                    case 3:
+                    document.getElementById("Image").src="Image3.png";
+                    useImage=1;
+                    break;
+                }
+            }
+        </script>
+        <script>
+            let y=0;
+            const wrongguess =[];
+            function endofthegame()
+
+            {
+                password=document.getElementById("password").value
+                guessing=document.getElementById("guess").value
+                if (password == guessing) {
+                    if (wrong >= 3) {
+                        alert("sorry,game over.")
+                    }
+                    else {
+                        wrong++
+                        alert("wrong musician")
+                        document.getElementById("result").innerHTML = "correct count:" + correct + "  " + "Wrong count:" +wrongguess                    }
+                }
+            }
+      
